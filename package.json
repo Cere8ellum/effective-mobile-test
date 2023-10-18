@@ -1,0 +1,57 @@
+{
+  "name": "effective-mobile-test",
+  "version": "1.0.0",
+  "description": "",
+  "config": {
+    "_ts_dev": "--config apps/on-ts/__config__/webpack/dev.config.js",
+    "_ts_prod": "--config apps/on-ts/__config__/webpack/prod.config.js",
+    "_js_dev": "--config apps/on-js/__config__/webpack/dev.config.js",
+    "_js_prod": "--config apps/on-js/__config__/webpack/prod.config.js"
+  },
+  "scripts": {
+    "start:dev": "concurrently --kill-others \"npm run start-ts:dev\" \"npm run start-js:dev \"",
+    "start:prod": "concurrently --kill-others \"npm run start-ts:prod\" \"npm run start-js:prod \"",
+    "start-ts:dev": "cross-env-shell webpack --watch ${npm_package_config__ts_dev}",
+    "start-ts:prod": "cross-env-shell webpack --watch ${npm_package_config__ts_prod}",
+    "start-js:dev": "cross-env-shell webpack --watch ${npm_package_config__js_dev}",
+    "start-js:prod": "cross-env-shell webpack --watch ${npm_package_config__js_prod}"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@nestjs/axios": "^3.0.0",
+    "@nestjs/common": "^10.2.7",
+    "@nestjs/config": "^3.1.1",
+    "@nestjs/core": "^10.2.7",
+    "@nestjs/platform-express": "^10.2.7",
+    "@nestjs/typeorm": "^10.0.0",
+    "axios": "^1.5.1",
+    "dotenv": "^16.3.1",
+    "pg": "^8.11.3",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.8.1",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0",
+    "typeorm": "^0.3.17"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.2",
+    "@babel/preset-env": "^7.23.2",
+    "@babel/preset-typescript": "^7.23.2",
+    "@nestjs/cli": "^10.1.18",
+    "@nestjs/swagger": "^7.1.13",
+    "babel-loader": "^9.1.3",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.0",
+    "concurrently": "^8.2.1",
+    "copy-webpack-plugin": "^11.0.0",
+    "cross-env": "^7.0.3",
+    "filemanager-webpack-plugin": "^8.0.0",
+    "run-script-webpack-plugin": "^0.2.0",
+    "ts-loader": "^9.5.0",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  }
+}

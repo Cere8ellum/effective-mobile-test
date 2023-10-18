@@ -1,0 +1,29 @@
+{
+    "editor.formatOnSave": true,
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "eslint.validate": [
+        "javascript",
+        "typescript"
+    ],
+    "json.schemas": [
+        {
+            "fileMatch": [
+                "tsconfig.json"
+            ],
+            "url": "http://json.schemastore.org/tsconfig",
+        }
+    ],
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "typescript.tsdk": "node_modules\\typescript\\lib", // Use Workspace Version for using plugins from tsconfig
+    "typescript.enablePromptUseWorkspaceTsdk": true,
+    "typescript.tsserver.enableTracing": true,
+    "typescript.tsserver.experimental.enableProjectDiagnostics": true,
+}

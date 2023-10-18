@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.common.json",
+  "compilerOptions": {
+    "emitDecoratorMetadata": true, // Enables experimental support for emitting type metadata for decorators
+    "experimentalDecorators": true, // Enables experimental support for decorators, which is a version of decorators that predates the TC39 standardization process.
+    "baseUrl": "./",
+    "strictPropertyInitialization": false, // To avoid of Property has no initializer and is not definitely assigned in the constructor.ts(2564)
+  },
+  "include": [
+    "src/**/*",
+  ],
+}
